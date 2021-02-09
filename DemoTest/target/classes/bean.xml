@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="user" class="Spring.com.entity.User" scope="prototype">
+        <property name="name" value="李磊"/>
+        <property name="age" value="29"/>
+        <property name="sex" value="男"/>
+    </bean>
+
+
+    <bean id="userCon" class="Spring.com.entity.User">
+        <constructor-arg name="name" value="李冰冰"></constructor-arg>
+        <constructor-arg name="age" value="45"></constructor-arg>
+        <constructor-arg name="sex" value="女"></constructor-arg>
+        <constructor-arg name="list" ref="user"></constructor-arg>
+    </bean>
+
+    <bean id="userP" class="Spring.com.entity.User" p:name="李四" p:age="26" p:sex="女"></bean>
+
+    <bean id="myStrs1" class="Spring.com.entity.Test1">
+        <property name="myStrs">
+            <array>
+                <value>张三</value>
+                <value>李四</value>
+                <value>王五</value>
+            </array>
+        </property>
+    </bean>
+
+    <bean id="myList" class="Spring.com.entity.Test1">
+        <property name="myList">
+           <list>
+               <value>网球</value>
+               <value>篮球</value>
+               <value>足球</value>
+           </list>
+        </property>
+    </bean>
+
+    <bean id="myMap" class="Spring.com.entity.Test1">
+        <property name="myMap">
+            <map>
+                <entry key="语文" value="87"></entry>
+                <entry key="数学" value="90"></entry>
+                <entry key="英语" value="89"></entry>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="mySet" class="Spring.com.entity.Test1">
+        <property name="mySet">
+            <set>
+                <value>小学</value>
+                <value>初中</value>
+                <value>高中</value>
+            </set>
+        </property>
+    </bean>
+
+    <bean id="myProps" class="Spring.com.entity.Test1">
+        <property name="myProps">
+            <props>
+                <prop key="user">root</prop>
+                <prop key="password">123456</prop>
+            </props>
+        </property>
+    </bean>
+</beans>
