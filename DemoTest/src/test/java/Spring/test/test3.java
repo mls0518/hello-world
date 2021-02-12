@@ -11,8 +11,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
 import javax.jws.soap.SOAPBinding;
+import javax.swing.*;
 
 public class test3 {
+
+
 
 
     @Test
@@ -20,15 +23,10 @@ public class test3 {
         ApplicationContext context = new ClassPathXmlApplicationContext("bean1.xml");
         UserServiceImpl bean = context.getBean(UserServiceImpl.class);
         UserServiceImpl bean1 = context.getBean(UserServiceImpl.class);
-
         System.out.println(bean);
         System.out.println(bean1);
-
-
         //bean.demo1();
     }
-
-
 
     @Test
     public void demo2(){
@@ -36,4 +34,15 @@ public class test3 {
         UserServiceImpl bean = (UserServiceImpl)context.getBean("userServiceImpl");
         bean.demo1();
     }
+
+    @Test
+    public void test3(){
+        ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+        UserServiceImpl bean = context.getBean(UserServiceImpl.class);
+        bean.demo1();
+    }
+
+
+
+
 }

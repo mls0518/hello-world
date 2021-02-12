@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--通过构造器的方式进行-->
+    <bean id="user1" class="Spring.com.entity.User">
+        <constructor-arg name="name" value="测试2"/>
+        <constructor-arg name="age" value="20"/>
+        <constructor-arg name="sex" value="女"/>
+    </bean>
+    <!--简单spring注入操作。set方式-->
+    <bean id="user" class="Spring.com.entity.User" scope="singleton" init-method="init" destroy-method="destroy">
+        <property name="name" value="测试1"/>
+        <property name="age" value="10"/>
+        <property name="sex" value="男"/>
+    </bean>
+    <!--p命名空间-->
+    <bean id="user2" class="Spring.com.entity.User" p:name="测试3" p:age="30" p:sex="男"></bean>
+
+    <!--数组-->
+    <bean id="str" class="Spring.com.entity.Test1">
+        <property name="myStrs">
+            <list>
+                <value>语文</value>
+                <value>数学</value>
+                <value>英语</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="list" class="Spring.com.entity.Test1">
+        <property name="myList">
+            <array>
+                <value>物理</value>
+                <value>生物</value>
+                <value>化学</value>
+                <value>体育</value>
+            </array>
+        </property>
+    </bean>
+
+    <bean id="set" class="Spring.com.entity.Test1">
+        <property name="mySet">
+            <set>
+                <value>篮球</value>
+                <value>足球</value>
+                <value>足球</value>
+                <value>羽毛球</value>
+            </set>
+        </property>
+    </bean>
+
+    <!--引用beanTest1-1.xml模块，进行开发-->
+    <import resource="beanTest1-1.xml"></import>
+</beans>

@@ -41,12 +41,20 @@ public class Test1 {
 
     public Test1() {}
 
-    public void test1(){
+    public void test1() {
         System.out.println(Arrays.toString(myStrs));
-        System.out.println(myList);
-        System.out.println(mySet);
-        System.out.println(myMap);
-        System.out.println(myProps);
-
     }
+    public void test2(){
+        System.out.println(myList);
+    }
+    public void test3(){
+        System.out.println(mySet);
+    }
+    public void test4(){
+        System.out.println(myMap);
+    }
+    public void test5(){
+        System.out.println(myProps);
+    }
+
 }

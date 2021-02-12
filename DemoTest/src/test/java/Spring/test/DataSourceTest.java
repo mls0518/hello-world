@@ -1,9 +1,11 @@
 package Spring.test;
 
+import Spring.com.SpringConfiguration;
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.pool.DruidPooledConnection;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
@@ -45,14 +47,20 @@ public class DataSourceTest {
 
     @Test
     public void test3() throws Exception{
-        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("beanTest1.xml");
         DataSource bean = context.getBean(DataSource.class);
         DruidDataSource dataSource = new DruidDataSource();
-
         Connection connection = bean.getConnection();
         System.out.println(connection);
     }
 
-
+    @Test
+    public void test4() throws Exception{
+        ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfiguration.class);
+        DataSource bean = context.getBean(DataSource.class);
+        DruidDataSource dataSource = new DruidDataSource();
+        Connection connection = bean.getConnection();
+        System.out.println(connection);
+    }
 
 }

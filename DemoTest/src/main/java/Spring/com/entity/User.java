@@ -47,10 +47,12 @@ public class User {
         this.list = list;
     }
 
-    public void test1(){
-        System.out.println("name:"+name+"age:"+age+"sex:"+sex+"list"+list);
+    public void init(){
+        System.out.println("初始化执行。。。");
     }
-
+    public void destroy(){
+        System.out.println("销毁执行。。。");
+    }
     @Override
     public String toString() {
         return "User{" +

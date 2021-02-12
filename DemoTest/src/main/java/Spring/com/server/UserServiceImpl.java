@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Scope("prototype")
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl {
 
     @Autowired
     private UserDao userDao;
