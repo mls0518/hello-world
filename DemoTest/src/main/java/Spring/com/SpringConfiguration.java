@@ -9,7 +9,9 @@ import org.springframework.context.annotation.Configuration;
 
 import javax.sql.DataSource;
 
+//标志该类是spring的核心配置类
 @Configuration()
+//开启注解扫描
 @ComponentScan("Spring.com")
 public class SpringConfiguration {
 
